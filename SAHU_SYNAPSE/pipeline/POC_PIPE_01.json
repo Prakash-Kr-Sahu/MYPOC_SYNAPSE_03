@@ -1,0 +1,20 @@
+{
+	"name": "POC_PIPE_01",
+	"properties": {
+		"description": "POC_PIPE_01",
+		"activities": [
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-09-06T14:17:01Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}
