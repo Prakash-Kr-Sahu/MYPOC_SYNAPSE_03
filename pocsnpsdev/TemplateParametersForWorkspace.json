@@ -4,6 +4,15 @@
 	"parameters": {
 		"workspaceName": {
 			"value": "pocsnpsdev"
+		},
+		"POC_LS_SQL_DB_connectionString": {
+			"value": ""
+		},
+		"pocsnpsdev-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"pocsnpsdev-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://pocadls2snpsdev.dfs.core.windows.net"
 		}
 	}
 }
