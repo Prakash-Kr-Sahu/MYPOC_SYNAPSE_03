@@ -1,0 +1,11 @@
+{
+	"name": "POC_LS_KV",
+	"properties": {
+		"description": "POC_LS_KV",
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://pocmykvdev.vault.azure.net/"
+		}
+	}
+}
