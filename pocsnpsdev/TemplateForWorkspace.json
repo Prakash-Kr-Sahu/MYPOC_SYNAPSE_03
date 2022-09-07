@@ -11,13 +11,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'POC_LS_SQL_DB'"
 		},
-		"POC_LS_SQL_DB_servicePrincipalKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalKey' of 'POC_LS_SQL_DB'"
-		},
 		"pocsnpsdev-WorkspaceDefaultSqlServer_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
+		},
+		"POC_LS_SQL_DB_SAMI_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'POC_LS_SQL_DB_SAMI'"
 		},
 		"POC_LS_SQL_DB_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
@@ -30,6 +30,10 @@
 		"pocsnpsdev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://pocadls2snpsdev.dfs.core.windows.net"
+		},
+		"POC_LS_KV_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://pocmykvdev.vault.azure.net/"
 		}
 	},
 	"variables": {
@@ -74,8 +78,12 @@
 					"connectionString": "[parameters('POC_LS_SQL_DB_connectionString')]",
 					"servicePrincipalId": "[parameters('POC_LS_SQL_DB_properties_typeProperties_servicePrincipalId')]",
 					"servicePrincipalKey": {
-						"type": "SecureString",
-						"value": "[parameters('POC_LS_SQL_DB_servicePrincipalKey')]"
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "POC_LS_KV",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "spnkeydev"
 					},
 					"tenant": "[parameters('POC_LS_SQL_DB_properties_typeProperties_tenant')]"
 				},
@@ -85,7 +93,8 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/linkedServices/POC_LS_KV')]"
 			]
 		},
 		{
@@ -159,6 +168,40 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/POC_LS_KV')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"description": "POC_LS_KV",
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('POC_LS_KV_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/POC_LS_SQL_DB_SAMI')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"description": "POC_LS_SQL_DB_SAMI",
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('POC_LS_SQL_DB_SAMI_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
 		}
 	]
 }
