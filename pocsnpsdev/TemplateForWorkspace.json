@@ -56,16 +56,6 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"description": "POC_LS_SQL_DB2",
-				"parameters": {
-					"P_SQL_SERVER": {
-						"type": "string",
-						"defaultValue": "pocsqlserdev.database.windows.net"
-					},
-					"P_SQL_DATABASE": {
-						"type": "string",
-						"defaultValue": "pocsqldbdev"
-					}
-				},
 				"annotations": [],
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
