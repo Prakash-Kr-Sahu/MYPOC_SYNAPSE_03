@@ -1,0 +1,15 @@
+{
+	"name": "POC_LS_SQL_DB_SAMI",
+	"properties": {
+		"description": "POC_LS_SQL_DB_SAMI",
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=pocsqlserdev.database.windows.net;Initial Catalog=pocsqldbdev"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
