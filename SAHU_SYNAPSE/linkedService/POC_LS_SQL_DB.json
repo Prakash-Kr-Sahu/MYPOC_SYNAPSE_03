@@ -2,20 +2,10 @@
 	"name": "POC_LS_SQL_DB",
 	"properties": {
 		"description": "POC_LS_SQL_DB2",
-		"parameters": {
-			"P_SQL_SERVER": {
-				"type": "string",
-				"defaultValue": "pocsqlserdev.database.windows.net"
-			},
-			"P_SQL_DATABASE": {
-				"type": "string",
-				"defaultValue": "pocsqldbdev"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=@{linkedService().P_SQL_SERVER};Initial Catalog=@{linkedService().P_SQL_DATABASE}"
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=pocsqlserdev.database.windows.net;Initial Catalog=pocsqldbdev"
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
