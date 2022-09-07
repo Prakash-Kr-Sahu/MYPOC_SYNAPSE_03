@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "create table tab1\n(id int)\n\ninsert into tab1 values(1)\n\nselect * from tab1",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "MY_SQL_POOL",
+				"poolName": "MY_SQL_POOL"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
