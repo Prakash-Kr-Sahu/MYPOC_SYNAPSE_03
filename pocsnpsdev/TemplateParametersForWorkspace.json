@@ -14,6 +14,9 @@
 		"pocsnpsdev-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
+		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
+			"value": "https://adb-3980372835923947.7.azuredatabricks.net"
+		},
 		"POC_LS_KV_properties_typeProperties_baseUrl": {
 			"value": "https://pocmykvdev.vault.azure.net/"
 		},

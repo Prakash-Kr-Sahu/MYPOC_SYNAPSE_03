@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
 		},
+		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
+			"type": "string",
+			"defaultValue": "https://adb-3980372835923947.7.azuredatabricks.net"
+		},
 		"POC_LS_KV_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://pocmykvdev.vault.azure.net/"
@@ -71,11 +75,11 @@
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"description": "POC_LS_DATABRICKS_15",
+				"description": "POC_LS_DATABRICKS_16",
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
-					"domain": "https://adb-3980372835923947.7.azuredatabricks.net",
+					"domain": "[parameters('POC_LS_DATABRICKS_properties_typeProperties_domain')]",
 					"authentication": "MSI",
 					"workspaceResourceId": "/subscriptions/e5700405-7fe1-447c-bb24-84ae60b4388d/resourceGroups/RG_AZ400/providers/Microsoft.Databricks/workspaces/pocdbrdev",
 					"existingClusterId": "0908-114243-ps6dwn8x"
@@ -94,7 +98,7 @@
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"description": "POC_LS_KV",
+				"description": "POC_LS_KV_01",
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
