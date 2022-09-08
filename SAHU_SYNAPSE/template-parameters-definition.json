@@ -1,33 +1,5 @@
 
 {
-    "Microsoft.Synapse/workspaces/notebooks": {
-        "properties":{
-            "bigDataPool":{
-                "referenceName": "="
-            }
-        }
-    },
-    "Microsoft.Synapse/workspaces/pipelines": {
-        "properties": {
-            "parameters": {
-                "*": {
-                    "defaultValue": "="
-                }
-            }
-        }
-    },
-    "Microsoft.Synapse/workspaces/triggers": {
-        "properties": {
-            "typeProperties": {
-                "recurrence": {
-                    "*": "=",
-                    "interval": "=:triggerSuffix:int",
-                    "frequency": "=:-freq"
-                },
-                "maxConcurrency": "="
-            }
-        }
-    },
     "Microsoft.Synapse/workspaces/linkedServices": {
         "*": {
             "properties": {
