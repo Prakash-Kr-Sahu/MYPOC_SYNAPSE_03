@@ -31,14 +31,7 @@
                 }
             }]
         }
-    },
-    "Microsoft.Synapse/workspaces/integrationRuntimes": {
-        "properties": {
-            "typeProperties": {
-                "*": "="
-            }
-        }
-    },
+    },   
     "Microsoft.Synapse/workspaces/triggers": {
         "properties": {
             "typeProperties": {
