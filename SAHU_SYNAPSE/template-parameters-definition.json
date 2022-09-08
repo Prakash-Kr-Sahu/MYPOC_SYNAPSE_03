@@ -37,7 +37,8 @@
                     "sasToken": "|",
                     "connectionString": "|:-connectionString:secureString",
                     "hostKeyFingerprint": "=",
-                    "domain": "="
+                    "domain": "=",
+                    "workspaceResourceId": "="                    
                 }
             }
         },
