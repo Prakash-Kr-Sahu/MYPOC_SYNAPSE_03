@@ -36,7 +36,8 @@
                     "sasUri": "|:-sasUri:secureString",
                     "sasToken": "|",
                     "connectionString": "|:-connectionString:secureString",
-                    "hostKeyFingerprint": "="
+                    "hostKeyFingerprint": "=",
+                    "domain": "-"
                 }
             }
         },
