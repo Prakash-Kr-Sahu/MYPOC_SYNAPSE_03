@@ -1,7 +1,7 @@
 {
 	"name": "POC_LS_DATABRICKS",
 	"properties": {
-		"description": "POC_LS_DATABRICKS_13",
+		"description": "POC_LS_DATABRICKS_14",
 		"annotations": [],
 		"type": "AzureDatabricks",
 		"typeProperties": {
