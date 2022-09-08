@@ -1,7 +1,7 @@
 {
 	"name": "POC_LS_KV",
 	"properties": {
-		"description": "POC_LS_KV",
+		"description": "POC_LS_KV_01",
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
