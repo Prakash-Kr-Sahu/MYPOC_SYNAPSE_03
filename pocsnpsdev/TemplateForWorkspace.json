@@ -71,7 +71,7 @@
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"description": "POC_LS_DATABRICKS_06",
+				"description": "POC_LS_DATABRICKS_07",
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
