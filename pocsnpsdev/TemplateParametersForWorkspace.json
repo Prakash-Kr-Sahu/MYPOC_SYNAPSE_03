@@ -17,6 +17,9 @@
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"value": "https://adb-3980372835923947.7.azuredatabricks.net"
 		},
+		"POC_LS_DATABRICKS_properties_typeProperties_workspaceResourceId": {
+			"value": "/subscriptions/e5700405-7fe1-447c-bb24-84ae60b4388d/resourceGroups/RG_AZ400/providers/Microsoft.Databricks/workspaces/pocdbrdev"
+		},
 		"POC_LS_KV_properties_typeProperties_baseUrl": {
 			"value": "https://pocmykvdev.vault.azure.net/"
 		},
