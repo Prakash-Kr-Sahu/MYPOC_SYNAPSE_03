@@ -23,6 +23,9 @@
 		"POC_LS_SQL_DB_properties_typeProperties_tenant": {
 			"value": "b1d80352-34a3-4a3a-843b-2e889b9ed8d6"
 		},
+		"POC_LS_SQL_DB_properties_typeProperties": {
+			"value": "b1d80352-34a3-4a3a-843b-2e889b9ed8d6"
+		},
 		"pocsnpsdev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://pocadls2snpsdev.dfs.core.windows.net"
 		}
