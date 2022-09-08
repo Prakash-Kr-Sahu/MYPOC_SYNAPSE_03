@@ -1,0 +1,18 @@
+{
+	"name": "POC_LS_DATABRICKS",
+	"properties": {
+		"description": "POC_LS_DATABRICKS",
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-3980372835923947.7.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/e5700405-7fe1-447c-bb24-84ae60b4388d/resourceGroups/RG_AZ400/providers/Microsoft.Databricks/workspaces/pocdbrdev",
+			"existingClusterId": "0908-114243-ps6dwn8x"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
