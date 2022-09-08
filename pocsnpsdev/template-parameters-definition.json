@@ -1,37 +1,21 @@
+
 {
     "Microsoft.Synapse/workspaces/notebooks": {
-        "properties": {
-            "bigDataPool": {
+        "properties":{
+            "bigDataPool":{
                 "referenceName": "="
-            }
-        }
-    },
-    "Microsoft.Synapse/workspaces/sqlscripts": {
-        "properties": {
-            "content": {
-                "currentConnection": {
-                    "*": "-"
-                }
             }
         }
     },
     "Microsoft.Synapse/workspaces/pipelines": {
         "properties": {
-            "activities": [{
-                "typeProperties": {
-                    "waitTimeInSeconds": "-::int",
-                    "headers": "=::object",
-                    "activities": [
-                        {
-                            "typeProperties": {
-                                "url": "-:-webUrl:string"
-                            }
-                        }
-                    ]
+            "parameters": {
+                "*": {
+                    "defaultValue": "="
                 }
-            }]
+            }
         }
-    },    
+    },
     "Microsoft.Synapse/workspaces/triggers": {
         "properties": {
             "typeProperties": {
@@ -50,9 +34,37 @@
                 "typeProperties": {
                     "accountName": "=",
                     "username": "=",
-                    "domain": "=",
+                    "userName": "=",
+                    "accessKeyId": "=",
+                    "endpoint": "=",
+                    "servicePrincipalId": "=",
+                    "userId": "=",
+                    "host": "=",
+                    "clientId": "=",
+                    "clusterUserName": "=",
+                    "clusterSshUserName": "=",
+                    "hostSubscriptionId": "=",
+                    "clusterResourceGroup": "=",
+                    "subscriptionId": "=",
+                    "resourceGroupName": "=",
+                    "tenant": "=",
+                    "dataLakeStoreUri": "=",
+                    "baseUrl": "=",
+                    "database": "=",
+                    "serviceEndpoint": "=",
+                    "batchUri": "=",
+                    "poolName": "=",
+                    "databaseName": "=",
+                    "systemNumber": "=",
+                    "server": "=",
+                    "url": "=",
+                    "functionAppUrl": "=",
+                    "environmentUrl": "=",
+                    "aadResourceId": "=",
+                    "sasUri": "|:-sasUri:secureString",
+                    "sasToken": "|",
                     "connectionString": "|:-connectionString:secureString",
-                    "secretAccessKey": "|"
+                    "hostKeyFingerprint": "="
                 }
             }
         },
@@ -61,33 +73,6 @@
                 "typeProperties": {
                     "dataLakeStoreUri": "="
                 }
-            }
-        },
-        "AzureKeyVault": {
-            "properties": {
-                "typeProperties": {
-                    "baseUrl": "|:baseUrl:secureString"
-                },
-                "parameters": {
-                    "KeyVaultURL": {
-                        "type": "=",
-                        "defaultValue": "|:defaultValue:secureString"
-                    }
-                }
-            }
-        }
-    },
-    "Microsoft.Synapse/workspaces/datasets": {
-        "properties": {
-            "typeProperties": {
-                "*": "="
-            }
-        }
-    },
-    "Microsoft.Synapse/workspaces/credentials" : {
-        "properties": {
-            "typeProperties": {
-                "resourceId": "="
             }
         }
     }
