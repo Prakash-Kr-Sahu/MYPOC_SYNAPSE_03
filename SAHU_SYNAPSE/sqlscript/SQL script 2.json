@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE [dbo].[POC_TAB_01]\n(\n    empid int NOT NULL\n)\nWITH\n(\n    DISTRIBUTION = HASH (empid),\n    CLUSTERED COLUMNSTORE INDEX\n)\nGO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "MY_SQL_POOL",
+				"poolName": "MY_SQL_POOL"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
