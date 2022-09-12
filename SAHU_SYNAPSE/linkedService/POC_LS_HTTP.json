@@ -1,0 +1,17 @@
+{
+	"name": "POC_LS_HTTP",
+	"properties": {
+		"description": "POC_LS_HTTP",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://dev/env/",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
