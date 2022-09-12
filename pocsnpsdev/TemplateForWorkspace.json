@@ -23,17 +23,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
 		},
-		"POC_PIPE_01_properties_0_typeProperties": {
-			"type": "int"
+		"POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP": {
+			"type": "object",
+			"defaultValue": {
+				"type": "string",
+				"defaultValue": "RG_MyDEV_ENV"
+			}
 		},
-		"POC_PIPE_02_properties_0_typeProperties": {
-			"type": "int"
-		},
-		"POC_PIPE_03_properties_0_typeProperties": {
-			"type": "int"
-		},
-		"POC_PIPE_04_properties_0_typeProperties": {
-			"type": "int"
+		"POC_PIPE_03_properties_parameters_P_RESOURCE_GROUP": {
+			"type": "object",
+			"defaultValue": {
+				"type": "string"
+			}
 		},
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"type": "string",
@@ -112,7 +113,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": "[parameters('POC_PIPE_01_properties_0_typeProperties')]"
+							"waitTimeInSeconds": 1
 						}
 					}
 				],
@@ -138,7 +139,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": "[parameters('POC_PIPE_02_properties_0_typeProperties')]"
+							"waitTimeInSeconds": 2
 						}
 					}
 				],
@@ -147,10 +148,7 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"P_RESOURCE_GROUP": {
-						"type": "string",
-						"defaultValue": "RG_MyDEV_ENV"
-					}
+					"P_RESOURCE_GROUP": "[parameters('POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP')]"
 				},
 				"annotations": []
 			},
@@ -169,7 +167,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": "[parameters('POC_PIPE_03_properties_0_typeProperties')]"
+							"waitTimeInSeconds": 3
 						}
 					}
 				],
@@ -178,9 +176,7 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"P_RESOURCE_GROUP": {
-						"type": "string"
-					}
+					"P_RESOURCE_GROUP": "[parameters('POC_PIPE_03_properties_parameters_P_RESOURCE_GROUP')]"
 				},
 				"annotations": []
 			},
@@ -199,7 +195,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": "[parameters('POC_PIPE_04_properties_0_typeProperties')]"
+							"waitTimeInSeconds": 4
 						}
 					}
 				],
