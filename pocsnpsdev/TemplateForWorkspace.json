@@ -19,10 +19,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
 		},
-		"POC_LS_SFTP_privateKeyContent": {
-			"type": "secureString",
-			"metadata": "Secure string for 'privateKeyContent' of 'POC_LS_SFTP'"
-		},
 		"POC_LS_SFTP_passPhrase": {
 			"type": "secureString",
 			"metadata": "Secure string for 'passPhrase' of 'POC_LS_SFTP'"
@@ -343,8 +339,12 @@
 					"authenticationType": "SshPublicKey",
 					"userName": "[parameters('POC_LS_SFTP_properties_typeProperties_userName')]",
 					"privateKeyContent": {
-						"type": "SecureString",
-						"value": "[parameters('POC_LS_SFTP_privateKeyContent')]"
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "POC_LS_KV",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "spnkeydev"
 					},
 					"passPhrase": {
 						"type": "SecureString",
@@ -357,7 +357,8 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/linkedServices/POC_LS_KV')]"
 			]
 		}
 	]

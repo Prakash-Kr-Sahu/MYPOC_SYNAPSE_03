@@ -14,9 +14,6 @@
 		"pocsnpsdev-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
-		"POC_LS_SFTP_privateKeyContent": {
-			"value": ""
-		},
 		"POC_LS_SFTP_passPhrase": {
 			"value": ""
 		},
