@@ -16,7 +16,7 @@
 		"parameters": {
 			"P_RESOURCE_GROUP": {
 				"type": "string",
-				"defaultValue": "RG_MyDEV_ENV"
+				"defaultValue": "RGP_DEV_ENV"
 			}
 		},
 		"annotations": []
