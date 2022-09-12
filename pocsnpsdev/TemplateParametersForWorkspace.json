@@ -5,6 +5,9 @@
 		"workspaceName": {
 			"value": "pocsnpsdev"
 		},
+		"POC_LS_SFTP_passPhrase": {
+			"value": ""
+		},
 		"POC_LS_SQL_DB_connectionString": {
 			"value": ""
 		},
@@ -14,17 +17,23 @@
 		"pocsnpsdev-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
-		"POC_LS_SFTP_passPhrase": {
-			"value": ""
-		},
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"value": "https://adb-3980372835923947.7.azuredatabricks.net"
 		},
 		"POC_LS_DATABRICKS_properties_typeProperties_workspaceResourceId": {
 			"value": "/subscriptions/e5700405-7fe1-447c-bb24-84ae60b4388d/resourceGroups/RG_AZ400/providers/Microsoft.Databricks/workspaces/pocdbrdev"
 		},
+		"POC_LS_HTTP_properties_typeProperties_url": {
+			"value": "https://dev/env/"
+		},
 		"POC_LS_KV_properties_typeProperties_baseUrl": {
 			"value": "https://pocmykvdev.vault.azure.net/"
+		},
+		"POC_LS_SFTP_properties_typeProperties_host": {
+			"value": "sftp.dev.env.in"
+		},
+		"POC_LS_SFTP_properties_typeProperties_userName": {
+			"value": "user_dev"
 		},
 		"POC_LS_SQL_DB_properties_typeProperties_servicePrincipalId": {
 			"value": "eeae3b03-7eee-4680-b04c-4fdd6b20090c"
@@ -34,15 +43,6 @@
 		},
 		"pocsnpsdev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://pocadls2snpsdev.dfs.core.windows.net"
-		},
-		"POC_LS_HTTP_properties_typeProperties_url": {
-			"value": "https://dev/env/"
-		},
-		"POC_LS_SFTP_properties_typeProperties_host": {
-			"value": "sftp.dev.env.in"
-		},
-		"POC_LS_SFTP_properties_typeProperties_userName": {
-			"value": "user_dev"
 		}
 	}
 }
