@@ -38,7 +38,9 @@
     "Microsoft.Synapse/workspaces/pipelines": {
         "properties": {
             "parameters": {
-                 "*": "="
+                 "*": {
+                     "defaultValue": "="
+                 }
             }
         }
     },
