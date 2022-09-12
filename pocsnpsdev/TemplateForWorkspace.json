@@ -23,18 +23,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
 		},
-		"POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP": {
-			"type": "object",
-			"defaultValue": {
-				"type": "string",
-				"defaultValue": "RG_MyDEV_ENV"
-			}
-		},
-		"POC_PIPE_03_properties_parameters_P_RESOURCE_GROUP": {
-			"type": "object",
-			"defaultValue": {
-				"type": "string"
-			}
+		"POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP_defaultValue": {
+			"type": "string",
+			"defaultValue": "RGP_DEV_ENV"
 		},
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"type": "string",
@@ -148,7 +139,10 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"P_RESOURCE_GROUP": "[parameters('POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP')]"
+					"P_RESOURCE_GROUP": {
+						"type": "string",
+						"defaultValue": "[parameters('POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP_defaultValue')]"
+					}
 				},
 				"annotations": []
 			},
@@ -176,7 +170,9 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"P_RESOURCE_GROUP": "[parameters('POC_PIPE_03_properties_parameters_P_RESOURCE_GROUP')]"
+					"P_RESOURCE_GROUP": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
