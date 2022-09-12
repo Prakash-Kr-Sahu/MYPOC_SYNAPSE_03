@@ -31,6 +31,9 @@
 		},
 		"pocsnpsdev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://pocadls2snpsdev.dfs.core.windows.net"
+		},
+		"POC_LS_HTTP_properties_typeProperties_url": {
+			"value": "https://dev/env/"
 		}
 	}
 }
