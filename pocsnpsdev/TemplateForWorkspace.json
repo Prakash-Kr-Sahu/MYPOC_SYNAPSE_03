@@ -154,7 +154,7 @@
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"description": "POC_LS_SFTP",
+				"description": "POC_LS_SFTP_01",
 				"annotations": [],
 				"type": "Sftp",
 				"typeProperties": {
