@@ -19,6 +19,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
 		},
+		"POC_LS_SFTP_privateKeyContent": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKeyContent' of 'POC_LS_SFTP'"
+		},
+		"POC_LS_SFTP_passPhrase": {
+			"type": "secureString",
+			"metadata": "Secure string for 'passPhrase' of 'POC_LS_SFTP'"
+		},
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"type": "string",
 			"defaultValue": "https://adb-3980372835923947.7.azuredatabricks.net"
@@ -46,6 +54,14 @@
 		"POC_LS_HTTP_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dev/env/"
+		},
+		"POC_LS_SFTP_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "sftp.dev.env.in"
+		},
+		"POC_LS_SFTP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "user_dev"
 		}
 	},
 	"variables": {
@@ -302,6 +318,38 @@
 					"url": "[parameters('POC_LS_HTTP_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": false,
 					"authenticationType": "Anonymous"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/POC_LS_SFTP')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"description": "POC_LS_SFTP",
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('POC_LS_SFTP_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "SshPublicKey",
+					"userName": "[parameters('POC_LS_SFTP_properties_typeProperties_userName')]",
+					"privateKeyContent": {
+						"type": "SecureString",
+						"value": "[parameters('POC_LS_SFTP_privateKeyContent')]"
+					},
+					"passPhrase": {
+						"type": "SecureString",
+						"value": "[parameters('POC_LS_SFTP_passPhrase')]"
+					}
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
