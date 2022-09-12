@@ -38,9 +38,7 @@
                     "connectionString": "|:-connectionString:secureString",
                     "hostKeyFingerprint": "=",
                     "domain": "=",
-                    "workspaceResourceId": "=",
-                    "referenceName": "=",
-                    "secretName": "="
+                    "workspaceResourceId": "="                    
                 }
             }
         },
