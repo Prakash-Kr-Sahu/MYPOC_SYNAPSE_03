@@ -149,7 +149,7 @@
 				"parameters": {
 					"P_RESOURCE_GROUP": {
 						"type": "string",
-						"defaultValue": "RG_MYDEV"
+						"defaultValue": "RG_YOURDEV"
 					}
 				},
 				"annotations": []
