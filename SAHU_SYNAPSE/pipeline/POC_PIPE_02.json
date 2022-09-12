@@ -1,0 +1,24 @@
+{
+	"name": "POC_PIPE_02",
+	"properties": {
+		"description": "POC_PIPE_02",
+		"activities": [
+			{
+				"name": "Wait2",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 2
+				}
+			}
+		],
+		"parameters": {
+			"P_RESOURCE_GROUP": {
+				"type": "string",
+				"defaultValue": "RG_DEV"
+			}
+		},
+		"annotations": []
+	}
+}
