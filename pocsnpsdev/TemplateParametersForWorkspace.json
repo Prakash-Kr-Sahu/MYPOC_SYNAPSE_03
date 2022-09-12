@@ -20,6 +20,9 @@
 		"POC_PIPE_02_properties_parameters_P_RESOURCE_GROUP_defaultValue": {
 			"value": "RGP_DEV_ENV"
 		},
+		"POC_PIPE_02_properties_parameters_P_TENANT_defaultValue": {
+			"value": "123456789"
+		},
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"value": "https://adb-3980372835923947.7.azuredatabricks.net"
 		},
