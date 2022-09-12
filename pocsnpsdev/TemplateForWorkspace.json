@@ -23,6 +23,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'pocsnpsdev-WorkspaceDefaultSqlServer'"
 		},
+		"POC_PIPE_01_properties_0_typeProperties": {
+			"type": "int"
+		},
+		"POC_PIPE_02_properties_0_typeProperties": {
+			"type": "int"
+		},
+		"POC_PIPE_03_properties_0_typeProperties": {
+			"type": "int"
+		},
+		"POC_PIPE_04_properties_0_typeProperties": {
+			"type": "int"
+		},
 		"POC_LS_DATABRICKS_properties_typeProperties_domain": {
 			"type": "string",
 			"defaultValue": "https://adb-3980372835923947.7.azuredatabricks.net"
@@ -36,8 +48,8 @@
 			"defaultValue": "https://dev/env/"
 		},
 		"POC_LS_KV_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://pocmykvdev.vault.azure.net/"
+			"type": "secureString",
+			"metadata": "Secure string for 'baseUrl' of 'POC_LS_KV'"
 		},
 		"POC_LS_SFTP_properties_typeProperties_host": {
 			"type": "string",
@@ -58,6 +70,29 @@
 		"pocsnpsdev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://pocadls2snpsdev.dfs.core.windows.net"
+		},
+		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
+			"type": "object",
+			"defaultValue": {
+				"location": "AutoResolve",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 0
+				}
+			}
+		},
+		"SQL script 1_properties_content_currentConnection_databaseName": {
+			"type": "string"
+		},
+		"SQL script 1_properties_content_currentConnection_poolName": {
+			"type": "string"
+		},
+		"SQL script 2_properties_content_currentConnection_databaseName": {
+			"type": "string"
+		},
+		"SQL script 2_properties_content_currentConnection_poolName": {
+			"type": "string"
 		}
 	},
 	"variables": {
@@ -77,7 +112,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 1
+							"waitTimeInSeconds": "[parameters('POC_PIPE_01_properties_0_typeProperties')]"
 						}
 					}
 				],
@@ -103,7 +138,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 2
+							"waitTimeInSeconds": "[parameters('POC_PIPE_02_properties_0_typeProperties')]"
 						}
 					}
 				],
@@ -114,7 +149,7 @@
 				"parameters": {
 					"P_RESOURCE_GROUP": {
 						"type": "string",
-						"defaultValue": "RG_DEV"
+						"defaultValue": "RG_MYDEV"
 					}
 				},
 				"annotations": []
@@ -134,7 +169,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 3
+							"waitTimeInSeconds": "[parameters('POC_PIPE_03_properties_0_typeProperties')]"
 						}
 					}
 				],
@@ -164,7 +199,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 4
+							"waitTimeInSeconds": "[parameters('POC_PIPE_04_properties_0_typeProperties')]"
 						}
 					}
 				],
@@ -373,14 +408,7 @@
 			"properties": {
 				"type": "Managed",
 				"typeProperties": {
-					"computeProperties": {
-						"location": "AutoResolve",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 0
-						}
-					}
+					"computeProperties": "[parameters('AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties')]"
 				}
 			},
 			"dependsOn": []
@@ -406,8 +434,8 @@
 						"language": "sql"
 					},
 					"currentConnection": {
-						"databaseName": "MY_SQL_POOL",
-						"poolName": "MY_SQL_POOL"
+						"databaseName": "[parameters('SQL script 1_properties_content_currentConnection_databaseName')]",
+						"poolName": "[parameters('SQL script 1_properties_content_currentConnection_poolName')]"
 					},
 					"resultLimit": 5000
 				},
@@ -426,8 +454,8 @@
 						"language": "sql"
 					},
 					"currentConnection": {
-						"databaseName": "MY_SQL_POOL",
-						"poolName": "MY_SQL_POOL"
+						"databaseName": "[parameters('SQL script 2_properties_content_currentConnection_databaseName')]",
+						"poolName": "[parameters('SQL script 2_properties_content_currentConnection_poolName')]"
 					},
 					"resultLimit": 5000
 				},
