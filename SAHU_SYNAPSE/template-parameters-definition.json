@@ -30,6 +30,17 @@
                             }
                         }
                     ]
+                    
+                    "parameters": [
+                        {
+                            "typeProperties": {
+                                "*": "="
+                            }
+                        }
+                    ]
+                    
+                    
+                    
                 }
             }]
         }
