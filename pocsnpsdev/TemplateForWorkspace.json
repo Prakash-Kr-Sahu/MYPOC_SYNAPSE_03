@@ -149,7 +149,7 @@
 				"parameters": {
 					"P_RESOURCE_GROUP": {
 						"type": "string",
-						"defaultValue": "RG_YOURDEV"
+						"defaultValue": "RG_MyDEV_ENV"
 					}
 				},
 				"annotations": []
@@ -217,6 +217,12 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"description": "POC_LS_DATABRICKS_18",
+				"parameters": {
+					"P_DBR": {
+						"type": "string",
+						"defaultValue": "DBR_DEV"
+					}
+				},
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
