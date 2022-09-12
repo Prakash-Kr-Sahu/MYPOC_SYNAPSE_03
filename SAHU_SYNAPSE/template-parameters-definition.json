@@ -30,14 +30,19 @@
                             }
                         }
                     ]
-                    
-                    
-                    
-                    
                 }
             }]
         }
     },
+    
+    "Microsoft.Synapse/workspaces/pipelines": {
+        "properties": {
+            "parameters": {
+                 "*": "="
+            }
+        }
+    },
+    
     "Microsoft.Synapse/workspaces/integrationRuntimes": {
         "properties": {
             "typeProperties": {
