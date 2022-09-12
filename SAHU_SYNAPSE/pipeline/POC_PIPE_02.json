@@ -17,6 +17,13 @@
 			"P_RESOURCE_GROUP": {
 				"type": "string",
 				"defaultValue": "RGP_DEV_ENV"
+			},
+			"P_SUBSCRIPTION": {
+				"type": "string"
+			},
+			"P_TENANT": {
+				"type": "string",
+				"defaultValue": "123456789"
 			}
 		},
 		"annotations": []
